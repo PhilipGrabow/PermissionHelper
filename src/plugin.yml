@@ -1,0 +1,21 @@
+name: PermissionHelper
+version: 0.1.0
+author: PhilipGrabow
+api-version: '1.21.3'
+softdepend: [LuckPerms]
+
+main: de.philipgrabow.permissionhelper.Main
+
+
+commands:
+  permshelper:
+    description: Öffnet ein GUI für Permissions
+    usage: /<command>
+
+permissions :
+    PermissionHelper.GUI:
+        description: "This is a permission node"
+        default: op
+    PermissionHelper.Player:
+        description: "This open the PlayerMenue"
+        default: op
