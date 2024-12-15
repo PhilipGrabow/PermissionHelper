@@ -45,31 +45,37 @@ public class InventoryClickE implements Listener {
 			}
 		}
 		///////////////////////////////////////// Player-Men§//////////////////////////////////////////////////////////////////////////////////
-		if (e.getCurrentItem().getType() == Material.DIAMOND_BLOCK) {
-			ItemMeta meta2 = e.getCurrentItem().getItemMeta();
-			if (meta2.getDisplayName().equalsIgnoreCase("Macht den Spieler zum Admin!")) {
-				if (e.getClick().isLeftClick()) {
-					Main.setAdminGroup(e.getWhoClicked().getName());
-					PermissionMenue.reloadinv();
-				} else {
-					e.getWhoClicked().sendMessage("§cNur Linksklick erlaubt!");
-					e.setCancelled(true);
+		ArrayList<String> list = new ArrayList<String>();
+		for (Player p : Bukkit.getOnlinePlayers()) {
+			list.add(p.getName());
+		}
+		if (list.contains(invname)) {
+			if (e.getCurrentItem().getType() == Material.DIAMOND_BLOCK) {
+				ItemMeta meta2 = e.getCurrentItem().getItemMeta();
+				if (meta2.getDisplayName().equalsIgnoreCase("Macht den Spieler zum Admin!")) {
+					if (e.getClick().isLeftClick()) {
+						Main.setAdminGroup(e.getWhoClicked().getName());
+						PermissionMenue.reloadinv();
+					} else {
+						e.getWhoClicked().sendMessage("§cNur Linksklick erlaubt!");
+						e.setCancelled(true);
+					}
 				}
-			}
-		} else if (e.getCurrentItem().getType() == Material.IRON_BLOCK) {
-			ItemMeta meta2 = e.getCurrentItem().getItemMeta();
-			if (meta2.getDisplayName().equalsIgnoreCase("Macht den Spieler zum Mitglied!")) {
-				if (e.getClick().isLeftClick()) {						
-					Main.setUserGroup(e.getWhoClicked().getName());
-					PermissionMenue.reloadinv();
-					e.setCancelled(true);
-				} else {
-					e.getWhoClicked().sendMessage("§cNur Linksklick erlaubt!");
-					e.setCancelled(true);
+			} else if (e.getCurrentItem().getType() == Material.IRON_BLOCK) {
+				ItemMeta meta2 = e.getCurrentItem().getItemMeta();
+				if (meta2.getDisplayName().equalsIgnoreCase("Macht den Spieler zum Mitglied!")) {
+					if (e.getClick().isLeftClick()) {						
+						Main.setUserGroup(e.getWhoClicked().getName());
+						PermissionMenue.reloadinv();
+						e.setCancelled(true);
+					} else {
+						e.getWhoClicked().sendMessage("§cNur Linksklick erlaubt!");
+						e.setCancelled(true);
+					}
 				}
+			} else {
+				e.setCancelled(true);
 			}
-		} else {
-			e.setCancelled(true);
 		}
 	}
 }
