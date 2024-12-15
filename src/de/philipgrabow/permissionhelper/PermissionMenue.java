@@ -17,12 +17,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class PermissionMenue {
 	
-	
-//	private static Main plugin;
-//	public PlayerMenue(Main plugin) {
-//		this.plugin = plugin;
-//	}
-	
 	public static String group = null;
 	static String playname;
 	static Player playerp;
@@ -41,21 +35,9 @@ public class PermissionMenue {
 		
 		openInventory(playerp, playname);
 	}
-	
-	
-	
 	public static void loadItems(org.bukkit.inventory.Inventory inv, String name) {
 		playname = name;
 		ItemStack skull = skull(name);
-//		ItemStack wheat = weizen();
-//		ItemStack dia = diamond();
-//		ItemStack tnts = tntblock();
-//		ItemStack gm0 = papiergm0(name);
-//		ItemStack gm1 = papiergm1(name);
-//		ItemStack gm2 = papiergm2(name);
-//		ItemStack gm3 = papiergm3(name);
-//		ItemStack compass = compass(name);
-		
 		ItemStack userhead = setUserHead(name);
 		ItemStack ownerhead = setOwnerHead(name);
 	
@@ -114,9 +96,7 @@ public class PermissionMenue {
 		inv.setItem(51, redglasspane());
 		inv.setItem(52, redglasspane());
 		inv.setItem(53, redglasspane());
-		
 	}
-	
 	public static ItemStack redglasspane() {
 		ItemStack redglass = new ItemStack(Material.RED_STAINED_GLASS_PANE);
 		ItemMeta meta = redglass.getItemMeta();
@@ -131,7 +111,6 @@ public class PermissionMenue {
 		if (cfg2.contains(name)) {
 			String uid = cfg2.getString(name + ".UUID");
 			Player p = Bukkit.getPlayer(UUID.fromString(uid));
-			
 			ItemMeta meta =  skullis.getItemMeta();
 			meta.setDisplayName(p.getName());
 			ArrayList<String> list = new ArrayList<String>();
@@ -148,37 +127,18 @@ public class PermissionMenue {
 		}
 		return skullis;
 	}
-
 	public static ItemStack setOwnerHead(String name) {
-//		File file = new File("plugins/HelpItem", "UUID.yml");
-//		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
-//		UUID uid = UUID.fromString(cfg.getString(name + ".UUID"));
-//		Player p = Bukkit.getPlayer((uid));
 		ItemStack dia = new ItemStack(Material.DIAMOND_BLOCK);
 		ItemMeta meta = dia.getItemMeta();
 		meta.setDisplayName("Macht den Spieler zum Admin!");
 		dia.setItemMeta(meta);
-//		Main.setAdminGroup(p);
 		return dia;
 	}
 	public static ItemStack setUserHead(String name) {
-//		File file = new File("plugins/HelpItem", "UUID.yml");
-//		FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
-//		UUID uid = UUID.fromString(cfg.getString(name + ".UUID"));
-//		Player p = Bukkit.getPlayer((uid));
 		ItemStack dia = new ItemStack(Material.IRON_BLOCK);
 		ItemMeta meta = dia.getItemMeta();
 		meta.setDisplayName("Macht den Spieler zum Mitglied!");
 		dia.setItemMeta(meta);
-//		Main.setUserGroup(p);
 		return dia;
 	}
-
-
-
-
-
-
-
-	
 }

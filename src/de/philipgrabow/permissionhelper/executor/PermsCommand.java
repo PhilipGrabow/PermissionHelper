@@ -25,9 +25,7 @@ public class PermsCommand implements CommandExecutor {
 				sender.sendMessage("Du musst ein Spieler sein!");
 				return true;
 			}
-				
 		}
 		return false;
 	}
-
 }

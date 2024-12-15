@@ -21,12 +21,11 @@ public class PlayerJoinE implements Listener {
 		String uid = p.getUniqueId().toString();
 		if(file.exists()) {
 		} else {
-//			try {
-				//file.createNewFile();
-//			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-//				e1.printStackTrace();
-//			}
+			try {
+				cfg.save(file);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		if(cfg.contains(e.getPlayer().getName() + ".UUID")) {
 			if(cfg.getString(e.getPlayer().getName() + ".UUID").equalsIgnoreCase(uid)) {
@@ -37,7 +36,6 @@ public class PlayerJoinE implements Listener {
 		try {
 			cfg.save(file);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	}

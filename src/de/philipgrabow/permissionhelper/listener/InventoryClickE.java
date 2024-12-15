@@ -19,7 +19,6 @@ public class InventoryClickE implements Listener {
 	@EventHandler(priority = EventPriority.HIGH)
 	public void onInvClick(InventoryClickEvent e) {
 		String invname = e.getView().getTitle();
-//		e.getWhoClicked().sendMessage(invname);
 		if (invname.equalsIgnoreCase("PermissionHelper")) {
 			if (e.getCurrentItem().getType() == Material.PLAYER_HEAD) {
 					ArrayList<String> list = new ArrayList<String>();
@@ -27,8 +26,6 @@ public class InventoryClickE implements Listener {
 						list.add(p.getName());
 					}
 					ItemMeta meta = e.getCurrentItem().getItemMeta();
-//					e.getWhoClicked().sendMessage(meta.getDisplayName());
-//					e.getWhoClicked().sendMessage(list.get(0));
 					if (list.contains(meta.getDisplayName())) {
 						if (e.getClick().isLeftClick()) {
 							if (e.getWhoClicked().hasPermission("PermissionHelper.Player")) {
@@ -44,19 +41,11 @@ public class InventoryClickE implements Listener {
 						}
 					}
 			} else {
-//				e.getWhoClicked().sendMessage(ChatColor.RED + "Dieses Item hat noch keine Funktion!");
 				e.setCancelled(true);
 			}
 		}
 		///////////////////////////////////////// Player-Men§//////////////////////////////////////////////////////////////////////////////////
-//		ArrayList<String> list = new ArrayList<String>();
-//		for (Player p : Bukkit.getOnlinePlayers()) {
-//			list.add(p.getName());
-//		}
 		if (e.getCurrentItem().getType() == Material.DIAMOND_BLOCK) {
-//			Player p = (Player) e.getWhoClicked();
-//			ItemStack is = PlayerMenue.setOwnerHead(invname);
-//			ItemMeta meta = is.getItemMeta();
 			ItemMeta meta2 = e.getCurrentItem().getItemMeta();
 			if (meta2.getDisplayName().equalsIgnoreCase("Macht den Spieler zum Admin!")) {
 				if (e.getClick().isLeftClick()) {
@@ -80,7 +69,6 @@ public class InventoryClickE implements Listener {
 				}
 			}
 		} else {
-//			e.getWhoClicked().sendMessage(ChatColor.RED + "Dieses Item hat noch keine Funktion!");
 			e.setCancelled(true);
 		}
 	}

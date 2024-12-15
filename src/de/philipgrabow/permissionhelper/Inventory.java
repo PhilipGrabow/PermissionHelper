@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -89,24 +87,18 @@ public class Inventory {
 		inv.setItem(52, redglasspane());
 		inv.setItem(53, redglasspane());
 		
-		// Player-MEN�
-		// ///////////////////////////////////////////////////////////////////////////////////
 		int slot = 27;//Anfangsslot
 		for (Player p : Bukkit.getOnlinePlayers()) {
 			ItemStack skull = new ItemStack(Material.PLAYER_HEAD);
 			ItemMeta meta =  skull.getItemMeta();
-//			meta.setOwner(p.getName());
 			meta.setDisplayName(p.getName());
 			ArrayList<String> list = new ArrayList<String>();
 			list.add(ChatColor.YELLOW + p.getName() + "`s Permission-Menü");
 			meta.setLore(list);
 			skull.setItemMeta(meta);
-//			p.sendMessage(p.getName() + " : " + slot);
 			inv.setItem(slot, skull);
 			slot++;
 		}
-		//////////////////////////////////////////////////////////////////////////////////////////////////
-		
 	}
 	public static ItemStack redglasspane() {
 //		@SuppressWarnings("deprecation")
@@ -115,115 +107,5 @@ public class Inventory {
 		meta.setDisplayName(ChatColor.RED + "Keine Funktion!");
 		redglass.setItemMeta(meta);
 		return redglass;
-	}
-	public static ItemStack GoldenApple() {
-		ItemStack goldenapple = new ItemStack(Material.GOLDEN_APPLE);
-		ItemMeta metaapple = goldenapple.getItemMeta();
-		metaapple.setDisplayName(ChatColor.RED + "Heilen!");
-		goldenapple.setItemMeta(metaapple);
-		return goldenapple;
-	}
-	public static ItemStack GoldenCarrot() {
-		ItemStack goldencarrot = new ItemStack(Material.GOLDEN_CARROT);
-		ItemMeta metacarrot = goldencarrot.getItemMeta();
-		metacarrot.setDisplayName(ChatColor.GOLD + "Deinen Hunger stillen!");
-		goldencarrot.setItemMeta(metacarrot);
-		return goldencarrot;
-	}
-	public static ItemStack TnT() {
-		ItemStack tnt = new ItemStack(Material.TNT);
-		ItemMeta metatnt = tnt.getItemMeta();
-		metatnt.setDisplayName(ChatColor.RED + "Sterben!");
-		tnt.setItemMeta(metatnt);
-		return tnt;
-	}
-	public static ItemStack DC() {
-		ItemStack dayclock = new ItemStack(Material.CLOCK);
-//		ItemStack dayclock = new ItemStack(Material.getMaterial("WATCH"));
-		ItemMeta metaday = dayclock.getItemMeta();
-		ArrayList<String> descriptionday = new ArrayList<String>();
-		descriptionday.add("Setzt die");
-		descriptionday.add("Zeit auf Tag!");
-		metaday.setLore(descriptionday);
-		metaday.setDisplayName(ChatColor.YELLOW + "Zeit: Tag!");
-		dayclock.setItemMeta(metaday);
-		return dayclock;
-	}
-
-	public static ItemStack NC() {
-		ItemStack nightclock = new ItemStack(Material.CLOCK);
-		ItemMeta metanight = nightclock.getItemMeta();
-		ArrayList<String> descriptionnight = new ArrayList<String>();
-		descriptionnight.add("Setzt die");
-		descriptionnight.add("Zeit auf Nacht!");
-		metanight.setLore(descriptionnight);
-		metanight.setDisplayName(ChatColor.BLUE + "Zeit: Nacht!");
-		nightclock.setItemMeta(metanight);
-		return nightclock;
-	}
-
-	public static ItemStack infoblatt() {
-		ItemStack paper = new ItemStack(Material.PAPER);
-		ItemMeta metapaper = paper.getItemMeta();
-		ArrayList<String> descriptionpaper = new ArrayList<String>();
-		descriptionpaper.add("Du benutzt das Plugin 'HelpItem'!");
-		descriptionpaper.add("Autor: Philip_Grabow");
-		descriptionpaper.add("Du kannst nur die vorhandenen Items nutzen mit Linksklick!");
-		descriptionpaper.add("Manche Items benoetigen bestimmte Rechte!");
-		descriptionpaper.add("Viel Spass beim Erforschen!");
-		metapaper.setLore(descriptionpaper);
-		metapaper.setDisplayName(ChatColor.GREEN + "Über dieses Plugin!");
-		metapaper.addEnchant(Enchantment.UNBREAKING, 1, true);
-		metapaper.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-		paper.setItemMeta(metapaper);
-		return paper;
-	}
-
-	public static ItemStack skull1() {
-		ItemStack steve = new ItemStack(Material.PLAYER_HEAD);
-		ItemMeta metakopf = steve.getItemMeta();
-		ArrayList<String> descriptionkopf = new ArrayList<String>();
-		descriptionkopf.add("Setzt den Spieler auf Rang: MITGLIED!");
-		descriptionkopf.add("Deoppt den Spieler!");
-		descriptionkopf.add("NUR FueR ADMINS!");
-		metakopf.setLore(descriptionkopf);
-		metakopf.setDisplayName(ChatColor.GREEN + "Dich zum Mitglied machen!");
-		steve.setItemMeta(metakopf);
-		return steve;
-	}
-
-	public static ItemStack skull2() {
-		ItemStack steve2 = new ItemStack(Material.PLAYER_HEAD);
-		ItemMeta metakopf2 = steve2.getItemMeta();
-		ArrayList<String> descriptionkopf2 = new ArrayList<String>();
-		descriptionkopf2.add("Setzt den Spieler auf Rang: Owner!");
-		descriptionkopf2.add("Oppt den Spieler!");
-		descriptionkopf2.add("NUR F�R ADMINS!");
-		metakopf2.setLore(descriptionkopf2);
-		metakopf2.setDisplayName(ChatColor.RED + "Dich zum Owner machen!");
-		steve2.setItemMeta(metakopf2);
-		return steve2;
-	}
-	public static ItemStack WC() {
-		ItemStack weatherclear = new ItemStack(Material.SUNFLOWER);
-		ItemMeta metaday = weatherclear.getItemMeta();
-		ArrayList<String> descriptionday = new ArrayList<String>();
-		descriptionday.add("Ändert das");
-		descriptionday.add("Wetter zu Sonnig!");
-		metaday.setLore(descriptionday);
-		metaday.setDisplayName(ChatColor.YELLOW + "Wetter: Sonnig/Klar!");
-		weatherclear.setItemMeta(metaday);
-		return weatherclear;
-	}
-	public static ItemStack WR() {
-		ItemStack weatherclear = new ItemStack(Material.WATER);
-		ItemMeta metaday = weatherclear.getItemMeta();
-		ArrayList<String> descriptionday = new ArrayList<String>();
-		descriptionday.add("Ändert das");
-		descriptionday.add("Wetter zu Regnerisch!");
-		metaday.setLore(descriptionday);
-		metaday.setDisplayName(ChatColor.YELLOW + "Wetter: Regen/Sturm!");
-		weatherclear.setItemMeta(metaday);
-		return weatherclear;
 	}
 }
