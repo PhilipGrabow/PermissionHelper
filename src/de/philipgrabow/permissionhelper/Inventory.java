@@ -10,28 +10,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class Inventory {
-
 	public static void openInventory(Player p) {
+		
 		org.bukkit.inventory.Inventory inv = Bukkit.createInventory(null, 54, "PermissionHelper");
 		loadItems(inv);
 		p.openInventory(inv);
 	}
-
-//	@SuppressWarnings("deprecation")
 	public static void loadItems(org.bukkit.inventory.Inventory inv) {
-		//ItemStacks laden
-//		ItemStack goldenapple = Inventory.GoldenApple();
-//		ItemStack goldencarrot = Inventory.GoldenCarrot();
-//		ItemStack tnt = Inventory.TnT();
-//		ItemStack dayclock = Inventory.DC();
-//		ItemStack nightclock = Inventory.NC();
-//		ItemStack book = Inventory.hbook();
-//		ItemStack paper = Inventory.infoblatt();
-//		ItemStack steve = Inventory.skull1();
-//		ItemStack steve2 = Inventory.skull2();
-//		ItemStack wc = Inventory.WC();
-//		ItemStack wr = Inventory.WR();
-		
+	
 		inv.setItem(0, redglasspane());
 		inv.setItem(1, redglasspane());
 		inv.setItem(2, redglasspane());

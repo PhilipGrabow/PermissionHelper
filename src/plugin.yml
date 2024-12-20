@@ -1,5 +1,5 @@
 name: PermissionHelper
-version: 0.1.0
+version: 0.1.3
 author: PhilipGrabow
 api-version: '1.21.3'
 softdepend: [LuckPerms]
@@ -11,11 +11,17 @@ commands:
   permshelper:
     description: Öffnet ein GUI für Permissions
     usage: /<command>
+  onlinetime:
+    description: Zeigt deine Onlinezeit an
+    usage: /<command> [player]
 
 permissions :
     PermissionHelper.GUI:
-        description: "This is a permission node"
+        description: "Open the GUI with all Players"
         default: op
     PermissionHelper.Player:
         description: "This open the PlayerMenue"
+        default: op
+    PermissionHelper.OnlineTime.other:
+        description: "Display OnlineTime from other Players"
         default: op

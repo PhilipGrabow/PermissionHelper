@@ -1,0 +1,48 @@
+###############################################################
+##CONFIG VOM PLUGIN PERMISSIONHELPER
+################################
+##Author: philipgrabow
+###############################################################
+Actionbar:
+    #Actionbar die wird unten über der Schnellzugriffleiste angezeigt (Standard: true)
+    Enabled: true
+    Tick:
+        #Verzögerung nach Login bis zum Anzeigen der ActionBar (Standard: 100)
+        Delay: 100
+        #Wiederholungstick damit Leiste sichtbar bleibt (Standard: 400)
+        Period: 400
+    Text:
+        #Standart Text:
+        #
+        #- '§2Willkommen auf den Servern von ''PG NETZWERK'''
+        #- '§cAm Spawn kannst du dir deine passende Welt aussuchen...'
+        #- '§2Wir würden uns freuen dich nocheinmal hier begrüßen zu dürfen...'
+        #- '§cAm Spawn gibt es für den Anfang eine kleine Starthilfe...'
+        #- '§bDieser Server bietet: Freebuild, Survival, PlotWorld'
+        #
+        - '§2Willkommen auf den Servern von PG NETZWERK'
+        - '§cAm Spawn kannst du dir deine passende Welt aussuchen...'
+        - '§2Wir würden uns freuen dich nocheinmal hier begrüßen zu dürfen...'
+        - '§cAm Spawn gibt es für den Anfang eine kleine Starthilfe...'
+        - '§bDieser Server bietet: Freebuild, Survival, PlotWorld'
+Title:
+    #Aktiviert die Title Leiste beim Betreten des Servers (Standard: true)
+    Enabled: true
+    Tick:
+        #Delay in Ticks 20 Ticks sind 1 Sekunde (Standard: 100)
+        Delay: 100
+        #FadeIn in Ticks 20 Ticks sind 1 Sekunde (Standard: 40)
+        FadeIn: 40
+        #Time in Ticks 20 Ticks sind 1 Sekunde (Standard: 100)
+        Time: 100
+        #FadeOut in Ticks 20 Ticks sind 1 Sekunde (Standard: 40)
+        FadeOut: 40
+    Text:
+        #Title der in der ersten Zeile angezeigt wird (Standard: Willkommen!)
+        MainTitle: '§eWillkommen!'
+        #Title der in der zweiten Zeile angezeigt wird (Standard: '§cDeine aktuelle Onlinezeit beträgt: §e%onlinetime% §cMinute/n!')
+        SubTitle: '§cDeine aktuelle Onlinezeit beträgt: §e%onlinetime% §cMinute/n!'
+OnlineTime:
+    #Hiermit kann die Aufzeichnung der Onlinezeit eingestellt werden (Standard: true)
+    Enabled: true
+        
