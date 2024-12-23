@@ -41,6 +41,7 @@ Title:
         #Title der in der ersten Zeile angezeigt wird (Standard: Willkommen!)
         MainTitle: '§eWillkommen!'
         #Title der in der zweiten Zeile angezeigt wird (Standard: '§cDeine aktuelle Onlinezeit beträgt: §e%onlinetime% §cMinute/n!')
+        #Placeholder: %onlinetime% zeigt die Online-zeit bis 60 Minuten in Minuten, ab 61 Minuten in Stunden an! (SubTitle)
         SubTitle: '§cDeine aktuelle Onlinezeit beträgt: §e%onlinetime% §cMinute/n!'
 OnlineTime:
     #Hiermit kann die Aufzeichnung der Onlinezeit eingestellt werden (Standard: true)

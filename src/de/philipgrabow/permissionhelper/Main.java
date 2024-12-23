@@ -7,6 +7,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import de.philipgrabow.permissionhelper.classes.ReloadServer_Events;
 import de.philipgrabow.permissionhelper.executor.OnlineTimeCommand;
 import de.philipgrabow.permissionhelper.executor.PermsCommand;
 import de.philipgrabow.permissionhelper.listener.InventoryClickE;
@@ -41,7 +42,8 @@ public class Main extends JavaPlugin{
 		
 		loadConfig();
 		
-		
+		ReloadServer_Events rse = new ReloadServer_Events();
+		rse.TestReload(this);
 		
 		getLogger().info("enabled!");
 	}
